@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doc</title>
+
+</head>
+<body>
+
+    <div class="counter-box">
+        <button id="minusBtn">-</button>
+        <span id="number">0</span>
+        <button id="plusBtn">+</button>
+    </div>
+
+    <script>
+        let numberDisplay = document.querySelector("#number");
+        let plusBtn = document.querySelector("#plusBtn");
+        let minusBtn = document.querySelector("#minusBtn");
+
+       
+        let count = localStorage.getItem("countValue");
+        numberDisplay.textContent = count;
+
+     
+        plusBtn.addEventListener("click", () => {
+            count++;
+            numberDisplay.textContent = count;
+            localStorage.setItem("countValue", count);
+        });
+        minusBtn.addEventListener("click", () => {
+            count--;
+            numberDisplay.textContent = count;
+            localStorage.setItem("countValue", count);
+        });
+    </script>
+</body>
+</html>
